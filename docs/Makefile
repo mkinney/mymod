@@ -118,6 +118,12 @@ man:
 	@echo
 	@echo "Build finished. The manual pages are in $(BUILDDIR)/man."
 
+manview:
+	nroff -man ${BUILDDIR}/man/* | more -s
+
+manview2:
+	man ./${BUILDDIR}/man/*
+
 texinfo:
 	$(SPHINXBUILD) -b texinfo $(ALLSPHINXOPTS) $(BUILDDIR)/texinfo
 	@echo
